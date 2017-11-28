@@ -44,8 +44,9 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <AppBar title="Hacker News Clone"/>
+        <BottomNav className="bottomNav" pageController={(state)=> this.updateToPage(state)}/>
         {julez}
-        <BottomNav className='foo' pageController={(state)=> this.updateToPage(state)}/>
+
       </MuiThemeProvider>
     );
   }

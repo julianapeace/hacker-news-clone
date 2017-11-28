@@ -15,7 +15,7 @@ class TopStories extends Component {
     var that = this;
     axios.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
     .then(function(resp){
-      return resp.data.slice(0,10)
+      return resp.data.slice(0,5)
     })
     .then(function(array){
       array.forEach(function(element){

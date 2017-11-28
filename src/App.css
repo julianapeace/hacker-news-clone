@@ -21,7 +21,10 @@
 .App-intro {
   font-size: large;
 }
-
+.bottomNav{
+  position:absolute;
+  bottom:0;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
