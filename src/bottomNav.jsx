@@ -1,18 +1,20 @@
 import React, {Component} from 'react';
 import FontIcon from 'material-ui/FontIcon';
+
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
-import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
+import Domain from 'material-ui/svg-icons/social/domain';
+import Reader from 'material-ui/svg-icons/action/chrome-reader-mode';
+import Filter from 'material-ui/svg-icons/image/filter-tilt-shift';
+import Face from 'material-ui/svg-icons/action/face';
 
 const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
 const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-const nearbyIcon = <IconLocationOn />;
+const domainIcon = <Domain/>;
+const readerIcon = <Reader/>;
+const filterIcon = <Filter/>;
+const faceIcon = <Face/>;
 
-/**
- * A simple example of `BottomNavigation`, with three labels and icons
- * provided. The selected `BottomNavigationItem` is determined by application
- * state (for instance, by the URL).
- */
 class BottomNav extends Component {
   state = {
     selectedIndex: 0,
@@ -26,18 +28,23 @@ class BottomNav extends Component {
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
           <BottomNavigationItem
             label="Top Stories"
-            icon={recentsIcon}
+            icon={filterIcon}
             onClick={() => this.select(0)}
           />
           <BottomNavigationItem
             label="Best Stories"
-            icon={favoritesIcon}
+            icon={readerIcon}
             onClick={() => this.select(1)}
           />
           <BottomNavigationItem
             label="Jobs"
-            icon={nearbyIcon}
+            icon={domainIcon}
             onClick={() => this.select(2)}
+          />
+          <BottomNavigationItem
+            label="Created By Juliana"
+            icon={faceIcon}
+            onClick={() => this.select(3)}
           />
         </BottomNavigation>
       </Paper>

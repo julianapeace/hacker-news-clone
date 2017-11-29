@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
 import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
-import './topStories.css';
 import RaisedButton from 'material-ui/RaisedButton';
-
+import './jobs.css';
 const axios = require('axios')
-class TopStories extends Component {
+class BestStories extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      topStories: [],
+      bestStories: [],
     }
   }
-  top_stories_api(){
-    var story = this.state.topStories;
+  best_stories_api(){
+    var story = this.state.bestStories;
     var that = this;
-    axios.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
+    axios.get('https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty')
     .then(function(resp){
       return resp.data.slice(0,5)
     })
@@ -28,7 +27,7 @@ class TopStories extends Component {
              url: resp.data.url,
            });
            that.setState({
-             topStories: story
+             bestStories: story
            })
         })
       })
@@ -38,12 +37,12 @@ class TopStories extends Component {
     return (
       <div>
       <Card className="md-card">
-      <CardTitle title="Top Stories" subtitle=""/>
+      <CardTitle title="Best Stories" subtitle=""/>
       <CardActions>
-      <RaisedButton label="Get Top Stories" onClick= {() => this.top_stories_api()} primary={true}/>
+      <RaisedButton label="Get Best Stories" onClick= {() => this.best_stories_api()} primary={true}/>
       </CardActions>
       <CardText>
-      {this.state.topStories.map((story) =>
+      {this.state.bestStories.map((story) =>
         <Card className="md-card" key={story.id}>
         <a href={story.url}>
           <CardTitle title={story.title} subtitle={story.id}/>
@@ -57,4 +56,4 @@ class TopStories extends Component {
       </div>
     )}
 }
-export default TopStories;
+export default BestStories;

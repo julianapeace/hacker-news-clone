@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
 import './jobs.css';
 const axios = require('axios')
 class Jobs extends Component {
@@ -40,7 +40,7 @@ class Jobs extends Component {
       <Card className="md-card">
       <CardTitle title="Jobs" subtitle=""/>
       <CardActions>
-      {this.job_api()}
+      <RaisedButton label="Get Job Stories" onClick= {() => this.job_api()} primary={true}/>
       </CardActions>
       <CardText>
       {this.state.jobs.map((story) =>
