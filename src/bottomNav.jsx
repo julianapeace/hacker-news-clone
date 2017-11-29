@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import FontIcon from 'material-ui/FontIcon';
-
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
 import Domain from 'material-ui/svg-icons/social/domain';
@@ -8,8 +6,6 @@ import Reader from 'material-ui/svg-icons/action/chrome-reader-mode';
 import Filter from 'material-ui/svg-icons/image/filter-tilt-shift';
 import Face from 'material-ui/svg-icons/action/face';
 
-const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
 const domainIcon = <Domain/>;
 const readerIcon = <Reader/>;
 const filterIcon = <Filter/>;
